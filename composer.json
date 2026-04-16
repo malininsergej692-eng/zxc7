@@ -1,0 +1,16 @@
+{
+    "name": "project/variant3",
+    "description": "Variant 3 - Cart and RateLimiter classes",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.8",
+        "phpstan/phpstan": "^1.10"
+    }
+}
