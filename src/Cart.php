@@ -4,10 +4,10 @@ namespace App;
 
 class Cart
 {
-    private $products = [];
-    private $discount = 0;
+    private array $products = [];
+    private float $discount = 0.0;
 
-    public function addProduct($name, $price)
+    public function addProduct(string $name, float $price): void
     {
         if (isset($this->products[$name])) {
             $this->products[$name]['quantity']++;
@@ -19,19 +19,19 @@ class Cart
         }
     }
 
-    public function removeProduct($name)
+    public function removeProduct(string $name): void
     {
         unset($this->products[$name]);
     }
 
-    public function applyDiscount($percent)
+    public function applyDiscount(float $percent): void
     {
         $this->discount = $percent;
     }
 
-    public function getTotal()
+    public function getTotal(): float
     {
-        $total = 0;
+        $total = 0.0;
         foreach ($this->products as $product) {
             $total += $product['price'] * $product['quantity'];
         }

@@ -4,17 +4,17 @@ namespace App;
 
 class RateLimiter
 {
-    private $limit;
-    private $interval;
-    private $requests = [];
+    private int $limit;
+    private int $interval;
+    private array $requests = [];
 
-    public function __construct($limit, $interval)
+    public function __construct(int $limit, int $interval)
     {
         $this->limit = $limit;
         $this->interval = $interval;
     }
 
-    public function allow()
+    public function allow(): bool
     {
         $now = time();
         $validRequests = [];
